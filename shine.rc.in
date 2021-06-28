@@ -1,0 +1,35 @@
+#include <winver.h>
+#ifndef DEBUG
+#define VER_DEBUG 0
+#else
+#define VER_DEBUG VS_FF_DEBUG
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     @SHINE_VERSION_MAJOR@,@SHINE_VERSION_MINOR@,@SHINE_VERSION_MICRO@,0
+PRODUCTVERSION  @SHINE_VERSION_MAJOR@,@SHINE_VERSION_MINOR@,@SHINE_VERSION_MICRO@,0
+FILEFLAGSMASK   VS_FF_DEBUG
+FILEFLAGS       VER_DEBUG
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "04090000"
+        BEGIN
+            VALUE "CompanyName",      "toots\0"
+            VALUE "FileDescription",  "Fixed-point mp3 encoding library.\0"
+            VALUE "FileVersion",      "@SHINE_VERSION@\0"
+            VALUE "InternalName",     "shine\0"
+            VALUE "LegalCopyright",   "GNU LIBRARY GENERAL PUBLIC LICENSE\0"
+            VALUE "OriginalFilename", "shine.dll\0"
+            VALUE "ProductName",      "libshine\0"
+            VALUE "ProductVersion",   "@SHINE_VERSION@\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 0
+    END
+END
